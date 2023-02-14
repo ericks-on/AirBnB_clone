@@ -4,6 +4,7 @@
 
 import uuid
 import datetime
+from dateutil import parser
 
 class BaseModel():
     """this is the base model class 
@@ -18,10 +19,20 @@ class BaseModel():
     __init__: initializes the class attributes
 
     """
-    def __init__(self):
-        self.id = str(uuid.uuid4())
-        self.created_at  = datetime.datetime.now()
-        self.updated_at = self.created_at
+    def __init__(self, *args, **kwargs):
+        if kwargs:
+            print(kwargs.keys())
+            for key in kwargs.keys():
+                if key != '__class__':
+                    if key == 'created_at' or key == 'updated_at':
+                        date = parser.parse(kwargs[key])
+                        setattr(self, key, date)
+                    else:
+                        setattr(self, key, kwargs[key])
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at  = datetime.datetime.now()
+            self.updated_at = self.created_at
 
     def __str__(self):
         return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
