@@ -33,9 +33,7 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at  = datetime.datetime.now()
             self.updated_at = self.created_at
-        if args:
-            for obj in args:
-                storage.new(obj)
+        storage.new(self.to_dict())
 
     def __str__(self):
         return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")

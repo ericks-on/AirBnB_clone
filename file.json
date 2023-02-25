@@ -1,1 +1,1 @@
-{}
+{"dict.3dabdbbc-2ddb-4eb3-8f4a-0c76aa965911": {"id": "3dabdbbc-2ddb-4eb3-8f4a-0c76aa965911", "created_at": "2023-02-25T18:31:14.829652", "updated_at": "2023-02-25T18:31:14.829652", "__class__": "BaseModel", "name": "My_First_Model", "my_number": 89}, "BaseModel.5f1662bf-e142-4b39-a734-66584c58d57b": {"id": "5f1662bf-e142-4b39-a734-66584c58d57b", "created_at": "2023-02-25T18:54:08.567560", "updated_at": "2023-02-25T18:54:08.567560", "__class__": "BaseModel", "name": "My_First_Model", "my_number": 89}}
